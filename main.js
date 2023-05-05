@@ -1,6 +1,9 @@
-let player = null
-let PC = 3
+function aleatorio(min, max){
+    return Math.floor(Math.random()*(max-min+1)+ min)
+}
 
+let player = null
+let PC = aleatorio(1,3)
 player = prompt("Elige: 1 para piedra, 2 para papel o 3 para tijera")
 //aler("Elegiste " + player)
 
@@ -29,12 +32,8 @@ if(PC == 1){
 //Combate
 if(PC == player){
     alert("Empate")
-}else if(player == 1 && PC == 3){
+}else if((player == 1 && PC == 3) || (player == 2 && PC == 1) || (player == 3 && PC == 2)) {
     alert("Ganaste")
-}else if(player == 2 && PC == 1){
-    alert("Ganaste")
-}else if(player == 3 && PC == 2){
-    alert("Ganaste")
-}else{
+}else {
     alert("Perdiste")
 }
